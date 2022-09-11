@@ -23,3 +23,5 @@ The user can create the custom command adding inside the **.txt** file lines for
 2. Dupe farming;
 3. Medals Farming;
 4. Level of an EZA.
+
+I'm really sorry for possible wrong spelling in the explanations and in the command.  
