@@ -2,23 +2,24 @@
 
 ## Introduction
 
-This code was created to have a faster and easier creation of custom commands from the 16DokkanBot made by k1mpl0s.  
-Will create a .txt file, with the command ready to be loaded in the bot.  
-The only available translations are English and Italian, with help maybe should be implemented more languages.  
+This Java program was created by me to help people in the creation of custom commands for the **16 Dokkan Bot** made by **K1mpl0s**.
+
+With this program will be created a **.txt** file ready to be used as command in the bot.  
+The only available translations are English and Italian, with the necessary help gave by the community more languages could be implemented.  
 
 ## Execution
 
-For example I need the english version (`creator`).
-Open a terminal in the folder with the file, then write:
+Now we will see haw to run it.  
 
-```console
-javac creator.java
-```
+1. In the folder of the files open a terminal;
+2. Write in the terminal `javac creator.java`;
+3. Write in the terminal `java creator`.
 
-to create an executable file of the script, then use:
+## How it actually works?
 
-```console
-java creator
-```
+The user can create the custom command adding inside the **.txt** file lines for:
 
-to execute it, then enjoy.
+1. Stages;
+2. Dupe farming;
+3. Medals Farming;
+4. Level of an EZA.
