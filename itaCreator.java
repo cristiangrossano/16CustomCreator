@@ -50,135 +50,140 @@ public class itaCreator {
                         "Seleziona una modalità:\n- 1 > farm di un evento;\n- 2 > farm copie di un personaggio;\n- 3 > farm medaglie;\n- 4 > farm medaglie da un eza\n- 0 > per creare il file e chiudere il programma.");
                 mode = input.nextInt();
 
-                if (mode == 1) {
-                    // ? Stage selection
-                    System.out.print("Inserisci l'id dello stage: ");
-                    input.nextLine();
-                    stageID = input.nextLine() + " ";
-                    if (stageID.length() != 7) {
-                        System.out
-                                .println(
-                                        "Lunghezza sbagliata!\nTutti gli stage in questa categoria sono fatti da 6 cifre");
-                        continue;
+                switch (mode) {
+                    case 1: {
+                        // ? Stage selection
+                        System.out.print("Inserisci l'id dello stage: ");
+                        input.nextLine();
+                        stageID = input.nextLine() + " ";
+                        if (stageID.length() != 7) {
+                            System.out
+                                    .println(
+                                            "Lunghezza sbagliata!\nTutti gli stage in questa categoria sono fatti da 6 cifre");
+                            continue;
+                        }
+                        System.out.println("Stage selezionato: " + stageID);
+
+                        // ? Difficulty
+                        System.out.print("Seleziona la difficoltà: ");
+                        difficulty = input.nextInt();
+                        if (difficulty < 0 && difficulty > 5) {
+                            System.out.println("Difficoltà non valida.");
+                            continue;
+                        }
+                        System.out.println("Difficoltà selezionata: " + difficulty);
+
+                        // ? Number of times
+                        System.out.print("How many times should the stage be done: ");
+                        index = input.nextInt();
+                        System.out.println("The stage will be done " + index + " times.");
+
+                        // ? Write file
+                        myWriter.write("message {message} farming" + stageID + "for " + index + " times.\n");
+                        myWriter.write(event + stageID + difficulty + " " + index + "\n");
+
                     }
-                    System.out.println("Stage selezionato: " + stageID);
 
-                    // ? Difficulty
-                    System.out.print("Seleziona la difficoltà: ");
-                    difficulty = input.nextInt();
-                    if (difficulty < 0 && difficulty > 5) {
-                        System.out.println("Difficoltà non valida.");
-                        continue;
+                        break;
+                    case 2: {
+                        // ? Stage selection
+                        System.out.print("Inserisci l'id dello stage: ");
+                        input.nextLine();
+                        stageID = input.nextLine() + " ";
+                        if (stageID.length() != 7) {
+                            System.out
+                                    .println(
+                                            "Lunghezza sbagliata!\nTutti gli stage in questa categoria sono fatti da 6 cifre");
+                            continue;
+                        }
+                        System.out.println("Stage selezionato: " + stageID);
+
+                        // ? Difficulty
+                        System.out.println("Seleziona la difficoltà.");
+                        difficulty = input.nextInt();
+                        if (difficulty < 0 && difficulty > 5) {
+                            System.out.println("Difficoltà non valida.");
+                            continue;
+                        }
+                        System.out.println("Difficoltà selezionata: " + difficulty);
+
+                        // ? Number of copies
+                        System.out.print("Quante copie dovrebbero essere farmate: ");
+                        index = input.nextInt();
+                        System.out.println("Il bot lavorerà per " + index + " copie.");
+
+                        // ? Character ID
+                        System.out.print("ID Personaggio: ");
+                        input.nextLine();
+                        itemID = input.nextLine() + " ";
+                        System.out.println("L'id del personaggio è : " + itemID);
+
+                        // ? Write file
+                        myWriter.write("message {message} Farming di " + index + " copie di " + itemID + "\n");
+                        myWriter.write(character + stageID + difficulty + " " + index + " " + itemID + "\n");
                     }
-                    System.out.println("Difficoltà selezionata: " + difficulty);
+                        break;
+                    case 3: {
+                        // ? Stage selection
+                        System.out.print("Inserisci l'id dello stage: ");
+                        input.nextLine();
+                        stageID = input.nextLine() + " ";
+                        if (stageID.length() != 7) {
+                            System.out
+                                    .println(
+                                            "Lunghezza sbagliata!\nTutti gli stage in questa categoria sono fatti da 6 cifre");
+                            continue;
+                        }
+                        System.out.println("Stage selezionato: " + stageID);
 
-                    // ? Number of times
-                    System.out.print("How many times should the stage be done: ");
-                    index = input.nextInt();
-                    System.out.println("The stage will be done " + index + " times.");
+                        // ? Difficulty
+                        System.out.print("Seleziona la difficoltà.");
+                        difficulty = input.nextInt();
+                        if (difficulty < 0 && difficulty > 5) {
+                            System.out.println("Difficoltà non valida.");
+                            continue;
+                        }
+                        System.out.println("Difficoltà selezionata: " + difficulty);
 
-                    // ? Write file
-                    myWriter.write("message {message} farming" + stageID + "for " + index + " times.\n");
-                    myWriter.write(event + stageID + difficulty + " " + index + "\n");
-                }
+                        // ? Number of medals
+                        System.out.print("How many medals should be farmed: ");
+                        index = input.nextInt();
+                        System.out.println("Il bot farmerà per " + index + "medaglie.");
 
-                if (mode == 2) {
-                    // ? Stage selection
-                    System.out.print("Inserisci l'id dello stage: ");
-                    input.nextLine();
-                    stageID = input.nextLine() + " ";
-                    if (stageID.length() != 7) {
-                        System.out
-                                .println(
-                                        "Lunghezza sbagliata!\nTutti gli stage in questa categoria sono fatti da 6 cifre");
-                        continue;
+                        // ? Character ID
+                        System.out.print("ID Medaglie: ");
+                        input.nextLine();
+                        itemID = input.nextLine() + " ";
+                        System.out.println("L'ID della medaglia: " + itemID);
+
+                        // ? Write file
+                        myWriter.write("message {message} farm di " + index + "medaglie di " + itemID + "\n");
+                        myWriter.write(medals + stageID + difficulty + " " + index + " " + itemID + "\n");
                     }
-                    System.out.println("Stage selezionato: " + stageID);
+                        break;
+                    case 4: {
+                        // ? Stage selection
+                        System.out.print("Inserisci l'ID dell'EZA: ");
+                        input.nextLine();
+                        stageID = input.nextLine() + " ";
+                        if (stageID.length() != 3) {
+                            System.out
+                                    .println(
+                                            "Lunghezza sbagliata!\nTutti gli stage in questa categoria dovrebbero avere 2 cifre nell'ID.");
+                            continue;
+                        }
+                        System.out.println("EZA Selezionato: " + stageID);
 
-                    // ? Difficulty
-                    System.out.println("Seleziona la difficoltà.");
-                    difficulty = input.nextInt();
-                    if (difficulty < 0 && difficulty > 5) {
-                        System.out.println("Difficoltà non valida.");
-                        continue;
+                        // ? Level
+                        System.out.print("Quale livello dovrebbe essere fatto: ");
+                        index = input.nextInt();
+                        System.out.println("Il bot farmerà il livello " + index);
+
+                        // ? Write file
+                        myWriter.write("message {message} Farm EZA\n");
+                        myWriter.write(eza + stageID + index + " " + index + "\n");
                     }
-                    System.out.println("Difficoltà selezionata: " + difficulty);
-
-                    // ? Number of copies
-                    System.out.print("Quante copie dovrebbero essere farmate: ");
-                    index = input.nextInt();
-                    System.out.println("Il bot lavorerà per " + index + " copie.");
-
-                    // ? Character ID
-                    System.out.print("ID Personaggio: ");
-                    input.nextLine();
-                    itemID = input.nextLine() + " ";
-                    System.out.println("L'id del personaggio è : " + itemID);
-
-                    // ? Write file
-                    myWriter.write("message {message} Farming di " + index + " copie di " + itemID + "\n");
-                    myWriter.write(character + stageID + difficulty + " " + index + " " + itemID + "\n");
-                }
-
-                if (mode == 3) {
-                    // ? Stage selection
-                    System.out.print("Inserisci l'id dello stage: ");
-                    input.nextLine();
-                    stageID = input.nextLine() + " ";
-                    if (stageID.length() != 7) {
-                        System.out
-                                .println(
-                                        "Lunghezza sbagliata!\nTutti gli stage in questa categoria sono fatti da 6 cifre");
-                        continue;
-                    }
-                    System.out.println("Stage selezionato: " + stageID);
-
-                    // ? Difficulty
-                    System.out.print("Seleziona la difficoltà.");
-                    difficulty = input.nextInt();
-                    if (difficulty < 0 && difficulty > 5) {
-                        System.out.println("Difficoltà non valida.");
-                        continue;
-                    }
-                    System.out.println("Difficoltà selezionata: " + difficulty);
-
-                    // ? Number of medals
-                    System.out.print("How many medals should be farmed: ");
-                    index = input.nextInt();
-                    System.out.println("Il bot farmerà per " + index + "medaglie.");
-
-                    // ? Character ID
-                    System.out.print("ID Medaglie: ");
-                    input.nextLine();
-                    itemID = input.nextLine() + " ";
-                    System.out.println("L'ID della medaglia: " + itemID);
-
-                    // ? Write file
-                    myWriter.write("message {message} farm di " + index + "medaglie di " + itemID + "\n");
-                    myWriter.write(medals + stageID + difficulty + " " + index + " " + itemID + "\n");
-                }
-
-                if (mode == 4) {
-                    // ? Stage selection
-                    System.out.print("Inserisci l'ID dell'EZA: ");
-                    input.nextLine();
-                    stageID = input.nextLine() + " ";
-                    if (stageID.length() != 3) {
-                        System.out
-                                .println(
-                                        "Lunghezza sbagliata!\nTutti gli stage in questa categoria dovrebbero avere 2 cifre nell'ID.");
-                        continue;
-                    }
-                    System.out.println("EZA Selezionato: " + stageID);
-
-                    // ? Level
-                    System.out.print("Quale livello dovrebbe essere fatto: ");
-                    index = input.nextInt();
-                    System.out.println("Il bot farmerà il livello " + index);
-
-                    // ? Write file
-                    myWriter.write("message {message} Farm EZA\n");
-                    myWriter.write(eza + stageID + index + " " + index + "\n");
+                        break;
                 }
             } while (mode != 0);
             System.out.println("Done!");
