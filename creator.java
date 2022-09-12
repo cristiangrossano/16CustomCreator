@@ -26,9 +26,9 @@ public class creator {
         try {
             String username = "cristiangrossano";
             FileWriter myWriter = new FileWriter(nome);
-            myWriter.write("message {message} Custom Command by " + username + "\n");
+            myWriter.write("message {message}Custom Command by " + username + "\n");
             myWriter.write(
-                    "message {message} Danger!\nmessage {message} The creator of the program assumes no responsibility for user errors\n");
+                    "message {message}Danger!\nmessage {message}The creator of the program assumes no responsibility for user errors\n");
 
             int mode = 0;
             int cont = 0;
@@ -79,7 +79,7 @@ public class creator {
                         System.out.println("The stage will be done " + index + " times.");
 
                         // ? Write file
-                        myWriter.write("message {message} farming" + stageID + "for " + index + " times.\n");
+                        myWriter.write("message {message}farming" + stageID + "for " + index + " times.\n");
                         myWriter.write(event + stageID + difficulty + " " + index + "\n");
                     }
                         break;
@@ -113,11 +113,11 @@ public class creator {
                         // ? Character ID
                         System.out.print("Character ID: ");
                         input.nextLine();
-                        itemID = input.nextLine() + " ";
+                        itemID = input.nextLine();
                         System.out.println("The character ID is: " + itemID);
 
                         // ? Write file
-                        myWriter.write("message {message} Farming of " + index + " copies of " + itemID + "\n");
+                        myWriter.write("message {message}Farming of " + index + " copies of " + itemID + "\n");
                         myWriter.write(character + stageID + difficulty + " " + index + " " + itemID + "\n");
                     }
                         break;
@@ -151,11 +151,11 @@ public class creator {
                         // ? Character ID
                         System.out.print("Medals ID: ");
                         input.nextLine();
-                        itemID = input.nextLine() + " ";
+                        itemID = input.nextLine();
                         System.out.println("The medal ID is: " + itemID);
 
                         // ? Write file
-                        myWriter.write("message {message} Farming of " + index + "medals of " + itemID + "\n");
+                        myWriter.write("message {message}Farming of " + index + "medals of " + itemID + "\n");
                         myWriter.write(medals + stageID + difficulty + " " + index + " " + itemID + "\n");
                     }
                         break;
@@ -178,14 +178,14 @@ public class creator {
                         System.out.println("The bot will farm the level " + index);
 
                         // ? Write file
-                        myWriter.write("message {message} Farming EZA\n");
+                        myWriter.write("message {message}Farming EZA\n");
                         myWriter.write(eza + stageID + index + " " + index + "\n");
                     }
                         break;
                 }
             } while (mode != 0);
             System.out.println("Done!");
-            myWriter.write("message {message} Custom Command ended.");
+            myWriter.write("message {message}Custom Command ended.");
 
             myWriter.close();
         } catch (Exception e) {
