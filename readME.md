@@ -15,6 +15,9 @@ Now we will see haw to run it.
 2. Write in the terminal `javac creator.java`;
 3. Write in the terminal `java creator`.
 
+Note!
+If you get errors after the command `javac creator.java` you should install/update the JDK from this [website](<https://download.oracle.com/java/18/latest/jdk-18_windows-x64_bin.msi>).  
+
 ## How it actually works?
 
 The user can create the custom command adding inside the **.txt** file lines for:
